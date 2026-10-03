@@ -1,0 +1,4 @@
+<script setup>
+const panels=[{label:'Ce que voit le véhicule',box:'57 170 379 380'},{label:'La carte publique · OSM',box:'550 170 380 380'},{label:'Scores des poses candidates',box:'1045 772 344 344'}]
+</script>
+<template><div class="cw-example" data-static="true"><div class="cw-panels"><div v-for="(panel,i) in panels" :key="i" class="cw-panel" :class="{'cw-focus':i===2}"><h3><b>{{i+1}}</b>{{panel.label}}</h3><svg viewBox="0 0 380 380" role="img" :aria-label="panel.label"><svg :viewBox="panel.box" width="380" height="380" style="overflow:hidden"><image href="/media/reliability/cw-example.png" width="1967" height="1172"/></svg></svg><div class="mini-caption">{{i===0?'Façades, intersection, occultations':i===1?'Rouge : référence · noir : estimation':'score · jaune : élevé'}}</div></div></div><div class="cw-message"></div></div></template>
