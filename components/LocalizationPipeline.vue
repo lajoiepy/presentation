@@ -29,7 +29,7 @@ const caption=computed(()=>time.value<3?'Une image seule ne donne pas directemen
 </defs>
 <g :style="{opacity}">
  <!-- Two independent inputs, joined only for matching. -->
- <g v-for="(p,i) in [[24,32,'01','Image caméra'],[326,32,'02','Projection BEV'],[326,235,'03','Carte neuronale'],[798,32,'04','Appariement']]" :key="i">
+ <g v-for="(p,i) in [[24,32,'01','Image caméra'],[326,32,'02','Projection BEV neuronale'],[326,235,'03','Carte neuronale'],[798,32,'04','Appariement']]" :key="i">
   <text :x="p[0]" :y="p[1]" fill="#6cdbed" style="font-size:14px">{{p[2]}}</text>
   <text :x="p[0]+29" :y="p[1]" fill="#e1edf3" style="font-size:21px">{{p[3]}}</text>
  </g>
@@ -70,7 +70,7 @@ const caption=computed(()=>time.value<3?'Une image seule ne donne pas directemen
  <text x="550" y="405" text-anchor="middle" fill="#cfe3ed" style="font-size:19px">{{caption}}</text>
 </g>
 </svg>
-<MotionCaption :time="time" :starts="[0,3,7,11]" :labels="['Image','Projection BEV','Extraction neuronale','Appariement']"/>
+<MotionCaption :time="time" :starts="[0,3,7,11]" :labels="['Image','Projection BEV neuronale','Extraction neuronale','Appariement']"/>
 </div></template>
 <style scoped>
 .localization-pipeline{height:446px;padding:10px 12px 58px}
