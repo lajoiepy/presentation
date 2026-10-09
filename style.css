@@ -95,3 +95,22 @@ html,body,#app{background:#030a12;font-family:Inter,sans-serif}
 .consensus-references span{display:block;font-size:15px;line-height:1.5;color:#b1c2d1}
 
 .closing-photos .content{height:494px}
+
+/* Opening programme: two themes, four speakers, then a shared discussion. */
+.programme-blocks{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.programme-block{padding:27px 30px 28px;border:1px solid #345569;border-radius:14px;background:#102638}
+.programme-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.programme-label{font-size:14px;text-transform:uppercase;letter-spacing:1.5px;color:#6cdbed;margin-bottom:13px}
+.programme-heading h2{font-size:31px;line-height:1.15}
+.programme-heading svg{width:76px;height:60px;flex:none;fill:none;stroke:#6cdbed;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.programme-topic{font-size:21px!important;color:#b1c2d1;margin-top:17px!important}
+.programme-speakers{list-style:none;margin:27px 0 0;padding:0;display:flex;flex-direction:column;gap:19px}
+.programme-speakers li{display:flex;align-items:center;gap:18px;font-size:27px;font-weight:500;line-height:1.25}
+.programme-speakers li>span{font-size:15px;letter-spacing:1px;color:#6cdbed}
+.programme-cities{background:#112b30;border-color:#355e58}
+.programme-cities .programme-label,.programme-cities .programme-speakers li>span{color:#b4da83}
+.programme-cities .programme-heading svg{stroke:#b4da83}
+.programme-discussion{display:flex;align-items:center;gap:20px;margin-top:24px;padding:22px 30px;border-radius:12px;background:#132b3a;border:1px solid #345569}
+.programme-step{font-size:15px;letter-spacing:1px;color:#6cdbed}
+.programme-discussion h2{font-size:27px;font-weight:550}
+.programme-audience{margin-left:auto;font-size:18px;color:#b1c2d1}

@@ -29,6 +29,40 @@ htmlAttrs:
 exportFilename: mobilite-autonome
 ---
 
+<div class="slide event-programme">
+<header class="slide-header"><div class="kicker">Programme de l’atelier</div><h1>Des véhicules autonomes à la mobilité urbaine</h1></header>
+<div class="content">
+<div class="programme-blocks">
+<section class="programme-block programme-vehicles">
+<div class="programme-heading"><div><div class="programme-label">Premier bloc</div><h2>Voitures autonomes</h2></div><svg viewBox="0 0 84 60" aria-hidden="true"><path d="M12 35l8-17h40l12 17v15H12Z"/><path d="M20 35h43M29 18l-4 17m30-17 7 17M19 43h8m29 0h8"/><circle cx="23" cy="52" r="4"/><circle cx="62" cy="52" r="4"/><path d="M31 8q11-8 22 0m-17 3q6-4 12 0"/></svg></div>
+<p class="programme-topic">Technologies et fiabilité</p>
+<ol class="programme-speakers"><li><span>01</span>Pierre-Yves Lajoie</li><li><span>02</span>Parker Ewen</li></ol>
+</section>
+<section class="programme-block programme-cities">
+<div class="programme-heading"><div><div class="programme-label">Deuxième bloc</div><h2>Ville et société</h2></div><svg viewBox="0 0 84 60" aria-hidden="true"><path d="M7 53V21h20V8h27v20h23v25M3 53h78M15 29h4m-4 9h4m15-21h5m8 0h1m-14 9h5m8 0h1m-14 9h5m8 0h1m15 2h6m-6 9h6M36 53V43h10v10"/></svg></div>
+<p class="programme-topic">Analyses et impacts sur la mobilité</p>
+<ol class="programme-speakers" start="3"><li><span>03</span>Nicolas Saunier</li><li><span>04</span>Francesco Ciari</li></ol>
+</section>
+</div>
+<div class="programme-discussion"><span class="programme-step">05</span><h2>Questions et discussion</h2></div>
+</div>
+</div>
+
+<!--
+Présenter le déroulement en 20 à 30 secondes. Premier bloc : Pierre-Yves Lajoie puis Parker Ewen, sur les voitures autonomes. Deuxième bloc : Nicolas Saunier puis Francesco Ciari, sur les analyses et les impacts de la mobilité autonome du point de vue des villes et de la société. Les quatre interventions seront suivies d’une discussion avec la salle.
+
+Questions possibles pour la discussion finale :
+1. Quelles preuves faudrait-il réunir pour autoriser des véhicules autonomes dans une ville comme Montréal, y compris l’hiver ?
+2. Comment éviter qu’un service de robotaxis augmente la congestion et les kilomètres parcourus à vide ?
+3. Dans quels cas les véhicules autonomes pourraient-ils compléter le transport collectif, et dans quels cas risquent-ils de le concurrencer ?
+4. Qui devrait bénéficier en priorité de ces services, et comment garantir leur accessibilité aux personnes et aux quartiers aujourd’hui mal desservis ?
+5. Si vous pouviez lancer un seul projet pilote demain, lequel choisiriez-vous et quels indicateurs décideraient de sa poursuite ?
+-->
+
+---
+title: 'Navigation autonome : une fiabilité qui inspire confiance'
+---
+
 <div class="slide cover reliability-cover contact-cover">
 <div class="kicker">Navigation autonome · Fiabilité et confiance</div>
 <div class="cover-copy"><h1>Navigation autonome<br/>fiable et qui inspire<br/>confiance</h1><p>Perception robotique<br/>performante et robuste.</p><div class="author">Pierre-Yves Lajoie<br/><span>Professeur en robotique autonome</span><small>Professeur adjoint · Polytechnique Montréal</small></div></div>

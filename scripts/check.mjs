@@ -5,6 +5,7 @@ const deck=parseSync(await readFile('slides.md','utf8')).slides
 const component=n=>deck[n-1]?.content.match(/<([A-Z][A-Za-z]+)(?:\s|\s*\/)/)?.[1]
 const animated=n=>!!component(n)&&!['SlidevVideo','ResearchVideo','RoadMosaic','FieldContactMosaic','MatchingUncertainty','CwExample'].includes(component(n))
 const durationFor=n=>component(n)==='TrustScene'?18:20
+const coverSlide=deck.findIndex((_,i)=>component(i+1)==='CityMap')+1
 const axesSlide=deck.findIndex(s=>s.title?.startsWith('Deux façons'))+1
 await import('./check-swarm-geometry.mjs')
 await import('./check-fleet-geometry.mjs')
@@ -82,9 +83,9 @@ for(const n of targetSlides){
 if(!posters&&!loops){
  await page.goto(`${base}/?animationTest#/presenter/${axesSlide}`,{waitUntil:'load'});await page.waitForTimeout(500);await seek(16);await page.screenshot({path:`${folder}/presenter.png`});if(!(await page.locator('body').innerText()).includes('Deux façons'))issues.push({type:'presenter'})
  await page.setViewportSize({width:1366,height:768});for(const n of deck.map((_,i)=>i+1)){await page.goto(`${base}/?animationTest#/${n}`,{waitUntil:'load'});await seek(16);await page.screenshot({path:`${folder}/laptop-${n}.png`})}
- await page.emulateMedia({reducedMotion:'reduce'});await page.goto(`${base}/#/1`,{waitUntil:'load'});await page.waitForTimeout(400);if(await page.locator('.slidev-page[data-slidev-no="1"] canvas').count())issues.push({type:'reduced-motion',message:'Canvas in static mode'});await page.screenshot({path:`${folder}/reduced-motion.png`})
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto(`${base}/#/${coverSlide}`,{waitUntil:'load'});await page.waitForTimeout(400);if(await page.locator(`.slidev-page[data-slidev-no="${coverSlide}"] canvas`).count())issues.push({type:'reduced-motion',message:'Canvas in static mode'});await page.screenshot({path:`${folder}/reduced-motion.png`})
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(`${base}/#/overview`,{waitUntil:'load'});await page.locator('.slidev-page .cover-copy h1').first().waitFor({state:'visible'});await page.waitForTimeout(1000);await page.screenshot({path:`${folder}/overview.png`})
- const fallbackPage=await context.newPage();await fallbackPage.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:original.call(this,type,...args)}});await fallbackPage.goto(`${base}/#/1`,{waitUntil:'load'});await fallbackPage.waitForTimeout(500);const fallback=await fallbackPage.locator('.slidev-page[data-slidev-no="1"] [data-static]').getAttribute('data-static');if(fallback!=='true')issues.push({type:'webgl-fallback',fallback});await fallbackPage.screenshot({path:`${folder}/webgl-fallback.png`});await fallbackPage.close()
+ const fallbackPage=await context.newPage();await fallbackPage.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return /webgl/.test(type)?null:original.call(this,type,...args)}});await fallbackPage.goto(`${base}/#/${coverSlide}`,{waitUntil:'load'});await fallbackPage.waitForTimeout(500);const fallback=await fallbackPage.locator(`.slidev-page[data-slidev-no="${coverSlide}"] [data-static]`).getAttribute('data-static');if(fallback!=='true')issues.push({type:'webgl-fallback',fallback});await fallbackPage.screenshot({path:`${folder}/webgl-fallback.png`});await fallbackPage.close()
 
 }
 await context.close();await browser.close();await writeFile(`${folder}/checks${loops?'-loops':''}.json`,JSON.stringify({base,external,issues,performanceResults},null,2));console.log(JSON.stringify({external,issues,performanceResults},null,2));if(issues.length||external.length)process.exitCode=1
