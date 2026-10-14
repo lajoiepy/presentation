@@ -112,6 +112,7 @@ import RoadMosaic from './components/RoadMosaic.vue'
 
 ---
 title: 'Deux façons de renforcer la fiabilité'
+disabled: true
 ---
 
 <div class="slide ">
