@@ -188,7 +188,7 @@ title: 'Résoudre les ambiguïtés visuelles et mieux calibrer l'incertitude
 ---
 
 <div class="slide ">
-<header class="slide-header"><div class="kicker">Pistes de recherche</div><h1>Mieux calibrer, puis chercher ce qui désambiguïse</h1><span class="tag"></span></header>
+<header class="slide-header"><div class="kicker">Travaux de recherche</div><h1>Résoudre les ambiguïtés visuelles et mieux calibrer l'incertitude</h1><span class="tag"></span></header>
 <div class="content research-split proposal"><SemanticScene /><div class="research-side"><h2>1. Calibrer l’incertitude</h2><p class="support">Vérifier l'estimation,<br/> selon les conditions.</p><h2 style="margin-top:28px">2. Croiser les modalités</h2><p class="support">Image + carte + indices sémantiques :<br/>intersection, bâtiments, végétation.</p><div class="keyline" style="font-size:22px">Une contradiction peut-elle<br/>révéler une mauvaise localisation ?</div></div></div>
 
 </div>
