@@ -16,6 +16,7 @@ coverage/
 # Research inputs and working material (selected presentation assets live in public/)
 /archive/
 /footage/
+/others/
 /step3_cw_gallery/
 /*.pdf
 /*.pptx
